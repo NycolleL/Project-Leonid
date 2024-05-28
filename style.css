@@ -39,7 +39,7 @@ h1 {
 }
 
 #salvar-btn {
-    color: #fff;
+    color: #000000;
 }
 
 #contatos-list {
@@ -52,6 +52,7 @@ h1 {
     border-radius: 10px;
     padding: 10px;
     background-color: #fff;
+    color: #000000;
     transition: all 0.3s ease;
 }
 .contact-photo {

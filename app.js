@@ -7,7 +7,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
     // Função para buscar todos os contatos
     function getAllContacts() {
-        fetch('https://bakcend-fecaf-render.onrender.com/contatos')
+        fetch('http://localhost:8080/contatos')
             .then(response => response.json())
             .then(contacts => {
                 contactContainer.innerHTML = '';
@@ -58,7 +58,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
     // Inserir um novo contato
     function insertContact(contact) {
-        fetch('https://bakcend-fecaf-render.onrender.com/contatos', {
+        fetch('http://localhost:8080/contatos', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
@@ -78,7 +78,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
     // Carregar o contato para edição
     function loadContact(id) {
-        fetch(`https://bakcend-fecaf-render.onrender.com/contatos/${id}`)
+        fetch(`http://localhost:8080/contatos/${id}`)
             .then(response => response.json())
             .then(contact => {
                 document.getElementById('nome').value = contact.nome;
@@ -109,7 +109,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
     // Atualizar o contato existente
     function updateContact(id, contact) {
-        fetch(`https://bakcend-fecaf-render.onrender.com/contatos/${id}`, {
+        fetch(`http://localhost:8080/contatos/${id}`, {
             method: 'PUT',
             headers: {
                 'Content-Type': 'application/json'
@@ -134,7 +134,7 @@ document.addEventListener('DOMContentLoaded', function () {
     // Excluir o contato existente
     function deleteContact(id) {
         if (confirm("Você tem certeza que deseja excluir este contato?")) {
-            fetch(`https://bakcend-fecaf-render.onrender.com/contatos/${id}`, {
+            fetch(`http://localhost:8080/contatos/${id}`, {
                 method: 'DELETE',
             })
             .then(response => {
